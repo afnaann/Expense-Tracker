@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-container {
+    background-image: url('https://images4.alphacoders.com/133/1338472.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bg-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(53, 53, 53, 0.5); /* Adjust opacity as needed */
+    z-index: 0; /* Place behind other elements */
+}
+
+.bg-container > * {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 1;
+}
+
+/* Styles for expense boxes */
+.expense-box {
+    background: rgba(55, 78, 48, 0.6); /* Semi-transparent red background */
+    backdrop-filter: blur(10px); /* Adjust blur amount as needed */
+    border-radius: 8px; /* Optional: rounded corners */
+    padding: 20px; /* Optional: padding */
+    box-shadow: 0 4px 10px rgba(49, 129, 69, 0.2); /* Optional: shadow for depth */
+}
+
+/* Styles for input fields */
+input[type="text"],
+textarea {
+    background-color: rgba(0, 80, 4, 0.8); /* Light background color */
+    border: 1px solid rgba(1, 122, 27, 0.2); /* Border color */
+    color: #ffffff; /* Text color */
+    border-radius: 4px; /* Optional: rounded corners */
+    padding: 10px; /* Padding for input fields */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #318b44; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(61, 163, 78, 0.5); /* Optional: shadow effect on focus */
+}
